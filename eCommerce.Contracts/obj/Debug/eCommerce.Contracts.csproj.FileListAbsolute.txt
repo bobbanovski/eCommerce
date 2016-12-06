@@ -1,0 +1,5 @@
+D:\eCommerce\eCommerce.Contracts\bin\Debug\eCommerce.Contracts.dll
+D:\eCommerce\eCommerce.Contracts\bin\Debug\eCommerce.Contracts.pdb
+D:\eCommerce\eCommerce.Contracts\obj\Debug\eCommerce.Contracts.csprojResolveAssemblyReference.cache
+D:\eCommerce\eCommerce.Contracts\obj\Debug\eCommerce.Contracts.dll
+D:\eCommerce\eCommerce.Contracts\obj\Debug\eCommerce.Contracts.pdb
