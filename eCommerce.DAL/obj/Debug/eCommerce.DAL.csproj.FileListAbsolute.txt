@@ -16,3 +16,6 @@ D:\eCommerce\eCommerce.DAL\obj\Debug\eCommerce.DAL.Migrations.initial.resources
 D:\eCommerce\eCommerce.DAL\obj\Debug\eCommerce.DAL.csproj.GenerateResource.Cache
 D:\eCommerce\eCommerce.DAL\obj\Debug\eCommerce.DAL.Migrations.costPrice.resources
 D:\eCommerce\eCommerce.DAL\obj\Debug\eCommerce.DAL.Migrations.baskets.resources
+D:\eCommerce\eCommerce.DAL\obj\Debug\eCommerce.DAL.Migrations.basketItemServices.resources
+D:\eCommerce\eCommerce.DAL\obj\Debug\eCommerce.DAL.Migrations._new.resources
+D:\eCommerce\eCommerce.DAL\obj\Debug\eCommerce.DAL.Migrations.baskets1.resources

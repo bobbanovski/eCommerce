@@ -1,0 +1,41 @@
+﻿@model IEnumerable<eCommerce.Model.BasketItem>
+
+@{
+    ViewBag.Title = "BasketSummary";
+}
+
+<h2>Items in Your Basket</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Image
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img style="width: 25%;" src="http://lorempixel.com/400/200/" alt="@item.Product.Description" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new {id = item.BasketItemId}) |
+            @Html.ActionLink("Delete", "Delete", new {id = item.BasketItemId})
+        </td>
+    </tr>
+}
+
+</table>

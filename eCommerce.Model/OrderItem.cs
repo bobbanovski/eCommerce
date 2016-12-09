@@ -10,13 +10,11 @@ namespace eCommerce.Model
     public class OrderItem
     {
         public int OrderItemId { get; set; }
-
         public int ProductId { get; set; }
 
-        public int Qantity { get; set; }
+        public string Description { get; set; }
 
         public decimal Price { get; set; }
-
         public int Quantity { get; set; }
 
         [MaxLength(255)]

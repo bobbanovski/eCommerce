@@ -1,0 +1,9 @@
+D:\eCommerce\eCommerce.Services\bin\Debug\eCommerce.Services.dll
+D:\eCommerce\eCommerce.Services\bin\Debug\eCommerce.Services.pdb
+D:\eCommerce\eCommerce.Services\bin\Debug\eCommerce.Contracts.dll
+D:\eCommerce\eCommerce.Services\bin\Debug\eCommerce.Model.dll
+D:\eCommerce\eCommerce.Services\bin\Debug\eCommerce.Contracts.pdb
+D:\eCommerce\eCommerce.Services\bin\Debug\eCommerce.Model.pdb
+D:\eCommerce\eCommerce.Services\obj\Debug\eCommerce.Services.csprojResolveAssemblyReference.cache
+D:\eCommerce\eCommerce.Services\obj\Debug\eCommerce.Services.dll
+D:\eCommerce\eCommerce.Services\obj\Debug\eCommerce.Services.pdb

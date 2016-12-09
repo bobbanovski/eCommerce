@@ -114,3 +114,5 @@ D:\eCommerce\eCommerce.WebUI\bin\Microsoft.Practices.Unity.xml
 D:\eCommerce\eCommerce.WebUI\bin\Microsoft.Practices.Unity.Configuration.xml
 D:\eCommerce\eCommerce.WebUI\bin\Microsoft.Practices.Unity.Mvc.xml
 D:\eCommerce\eCommerce.WebUI\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+D:\eCommerce\eCommerce.WebUI\bin\eCommerce.Services.dll
+D:\eCommerce\eCommerce.WebUI\bin\eCommerce.Services.pdb
