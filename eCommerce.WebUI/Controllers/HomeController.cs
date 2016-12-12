@@ -14,19 +14,33 @@ namespace eCommerce.WebUI.Controllers
     public class HomeController : Controller
     {
         //Inject repository into the controller rather than instantiate within actionresult
-        public IRepositoryBase<Customer> customers;
-        public IRepositoryBase<Product> products;
-        public IRepositoryBase<Basket> baskets;
-        private BasketService basketService;
+        IRepositoryBase<Customer> customers;
+        IRepositoryBase<Product> products;
+        IRepositoryBase<Basket> baskets;
+        IRepositoryBase<Voucher> vouchers;
+        IRepositoryBase<VoucherType> voucherTypes;
+        private IRepositoryBase<BasketVoucher> basketVouchers;
+        BasketService basketService;
 
         //use constructor that takes in interface
-        public HomeController(IRepositoryBase<Customer> customers, IRepositoryBase<Product> products, 
-            IRepositoryBase<Basket> baskets )
+        public HomeController(IRepositoryBase<Customer> customers, 
+            IRepositoryBase<Product> products, 
+            IRepositoryBase<Basket> baskets,
+            IRepositoryBase<Voucher> vouchers,
+            IRepositoryBase<VoucherType> voucherTypes,
+            IRepositoryBase<BasketVoucher> basketVouchers 
+            )
         {
             this.customers = customers; //customers passed in = customers up the top
             this.products = products;
             this.baskets = baskets;
-            basketService = new BasketService(this.baskets);
+            this.vouchers = vouchers;
+            this.voucherTypes = voucherTypes;
+
+            basketService = new BasketService(this.baskets, 
+                this.vouchers,
+                this.voucherTypes,
+                this.basketVouchers);
         }
 
         public ActionResult Index()

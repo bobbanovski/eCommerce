@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using eCommerce.Contracts.Model;
+using eCommerce.Contracts.Repositories;
 
 namespace eCommerce.Model
 {

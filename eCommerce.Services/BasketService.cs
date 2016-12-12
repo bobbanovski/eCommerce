@@ -12,13 +12,71 @@ namespace eCommerce.Services
 {
     public class BasketService
     {
-        IRepositoryBase<Basket> baskets;
+        private IRepositoryBase<Basket> baskets;
+        private IRepositoryBase<Voucher> vouchers;
+        private IRepositoryBase<VoucherType> voucherTypes;
+        private IRepositoryBase<BasketVoucher> basketVouchers;
 
         public const string BasketSessionName = "eCommerceBasket"; //Arbitrary name
 
-        public BasketService(IRepositoryBase<Basket> baskets)
+        public BasketService(IRepositoryBase<Basket> baskets, IRepositoryBase<Voucher> vouchers, 
+            IRepositoryBase<VoucherType> voucherTypes, IRepositoryBase<BasketVoucher> basketVouchers ) // Constructor
         {
             this.baskets = baskets;
+            this.vouchers = vouchers;
+            this.voucherTypes = voucherTypes;
+            this.basketVouchers = basketVouchers;
+        }
+
+        public void AddVoucher(string VoucherCode, HttpContextBase httpContext)
+        {
+            Basket basket = GetBasket(httpContext);
+            Voucher voucher = vouchers.GetAll().FirstOrDefault(v => v.VoucherCode == VoucherCode);
+
+            if (voucher != null)
+            {
+                VoucherType voucherType = voucherTypes.GetById(voucher.VoucherTypeId);
+                if (voucherType != null)
+                {
+                    BasketVoucher basketVoucher = new BasketVoucher();
+                    if (voucherType.Type == "Money Off")
+                    {
+                        MoneyOff(voucher, basket, basketVoucher);
+                    }
+                    if (voucherType.Type == "Percent Off")
+                    {
+                        PercentOff(voucher, basket, basketVoucher);
+                    }
+                    baskets.Commit();
+                }
+            }
+        }
+
+        public void MoneyOff(Voucher voucher, Basket basket, BasketVoucher basketVoucher)
+        {
+            decimal basketTotal = basket.BasketTotal();
+            if (voucher.MinimumSpend < basketTotal) // Then assign voucher to basket
+            {
+                basketVoucher.Value = voucher.Value*-1;
+                basketVoucher.VoucherCode = voucher.VoucherCode;
+                basketVoucher.VoucherDescription = voucher.VoucherDescription;
+                basketVoucher.VoucherId = voucher.VoucherId;
+
+                basket.AddBasketVoucher(basketVoucher);
+            }
+        }
+
+        public void PercentOff(Voucher voucher, Basket basket, BasketVoucher basketVoucher)
+        {
+            if (voucher.MinimumSpend > basket.BasketTotal())
+            {
+                basketVoucher.Value = (voucher.Value*(basket.BasketTotal()/100)*-1);
+                basketVoucher.VoucherCode = voucher.VoucherCode;
+                basketVoucher.VoucherDescription = voucher.VoucherDescription;
+                basketVoucher.VoucherId = voucher.VoucherId;
+                
+                basket.AddBasketVoucher(basketVoucher);
+            }
         }
 
         private Basket createNewBasket(HttpContextBase httpContext)

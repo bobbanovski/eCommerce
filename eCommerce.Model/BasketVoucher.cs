@@ -5,6 +5,7 @@ using eCommerce.Contracts.Model;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eCommerce.Contracts.Repositories;
 
 namespace eCommerce.Model
 {

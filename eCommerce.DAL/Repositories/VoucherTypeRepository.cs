@@ -10,9 +10,10 @@ namespace eCommerce.DAL.Repositories
 {
     public class VoucherTypeRepository : RepositoryBase<VoucherType>
     {
-        public VoucherTypeRepository(DataContext context) : base(context)
+        public VoucherTypeRepository(DataContext context)
+            : base(context)
         {
-            if(context == null)
+            if (context == null)
                 throw new ArgumentNullException();
         }
     }
