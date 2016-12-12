@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eCommerce.Contracts.Model;
 
 namespace eCommerce.Model
 {
-    public class Product
+    public class Product : IProduct
     {
         public int ProductId { get; set; }
 

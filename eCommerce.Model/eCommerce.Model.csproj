@@ -43,11 +43,20 @@
   <ItemGroup>
     <Compile Include="Basket.cs" />
     <Compile Include="BasketItem.cs" />
+    <Compile Include="BasketVoucher.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Voucher.cs" />
+    <Compile Include="VoucherType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eCommerce.Contracts\eCommerce.Contracts.csproj">
+      <Project>{58572c14-b85a-46ab-9b28-001549dcda03}</Project>
+      <Name>eCommerce.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

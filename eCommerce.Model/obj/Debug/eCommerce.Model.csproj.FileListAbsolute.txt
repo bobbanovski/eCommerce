@@ -3,3 +3,5 @@ D:\eCommerce\eCommerce.Model\bin\Debug\eCommerce.Model.pdb
 D:\eCommerce\eCommerce.Model\obj\Debug\eCommerce.Model.csprojResolveAssemblyReference.cache
 D:\eCommerce\eCommerce.Model\obj\Debug\eCommerce.Model.dll
 D:\eCommerce\eCommerce.Model\obj\Debug\eCommerce.Model.pdb
+D:\eCommerce\eCommerce.Model\bin\Debug\eCommerce.Contracts.dll
+D:\eCommerce\eCommerce.Model\bin\Debug\eCommerce.Contracts.pdb
