@@ -3,5 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-@Html.ActionLink("Products", "ProductList")
+<h2>Administration</h2>
+@Html.ActionLink("Products", "ProductList", null, new { @class="btn btn-lg btn-success"})
+@Html.ActionLink("VoucherTypes","VoucherTypes", null, new { @class = "btn btn-lg btn-success" })
+@Html.ActionLink("Vouchers","Vouchers", null, new { @class = "btn btn-lg btn-success" })

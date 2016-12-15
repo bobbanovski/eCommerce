@@ -1,0 +1,88 @@
+﻿@model eCommerce.Model.Voucher
+
+@{
+    ViewBag.Title = "DeleteVoucher";
+}
+
+<h2>DeleteVoucher</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Voucher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VoucherCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VoucherCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VoucherTypeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VoucherTypeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VoucherDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VoucherDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppliesToProductId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppliesToProductId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumSpend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumSpend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MultipleUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MultipleUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedTo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

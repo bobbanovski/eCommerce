@@ -84,5 +84,11 @@ namespace eCommerce.WebUI.Controllers
 
             return RedirectToAction("BasketSummary");
         }
+
+        public ActionResult AddBasketVoucher(string voucherCode)
+        {
+            basketService.AddVoucher(voucherCode, this.HttpContext);
+            return RedirectToAction("BasketSummary");
+        }
     }
 }

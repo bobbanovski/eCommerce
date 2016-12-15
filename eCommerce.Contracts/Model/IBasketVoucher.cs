@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace eCommerce.Model
+namespace eCommerce.Contracts.Model
 {
     public interface IBasketVoucher
     {
